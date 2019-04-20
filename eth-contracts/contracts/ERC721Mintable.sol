@@ -21,9 +21,9 @@ contract Ownable {
     //  2) create an internal constructor that sets the _owner var to the creater of the contract 
        constructor
                                 (
-                                    address newO
+                                   address newO
                                 ) 
-                                public 
+                                internal 
     {
         _owner = newO;
         emit ChangedOwner(_owner);
@@ -478,7 +478,7 @@ contract ERC721Enumerable is ERC165, ERC721 {
     }
 }
 
-contract ERC721Metadata is ERC721Enumerable, usingOraclize {
+contract ERC721Metadata is ERC721Enumerable {
     
     // TODO: Create private vars for token _name, _symbol, and _baseTokenURI (string)
     bytes4 private _name;
@@ -551,7 +551,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 //      -takes in a 'to' address, tokenId, and tokenURI as parameters
 //      -returns a true boolean upon completion of the function
 //      -calls the superclass mint and setTokenURI functions
-contract CustomERC721Token is ERC721Metadata{
+contract ERC721Mintable is ERC721Metadata{
     string private _name = "RandomName";
     string private _symbol = "Ran";
     string private _baseTokenCustomURI = "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/";
