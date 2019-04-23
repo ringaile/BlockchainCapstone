@@ -5,6 +5,8 @@ var ERC721Mintable = artifacts.require("./ERC721Mintable.sol");
 
 module.exports = function(deployer) {
   deployer.deploy(ERC721Mintable);
-  deployer.deploy(Verifier);
-  deployer.deploy(SolnSquareVerifier);
+  deployer.deploy(Verifier)
+    .then(() => {
+        return deployer.deploy(SolnSquareVerifier, Verifier.address);
+    });
 };
