@@ -6757,12 +6757,12 @@
         }
       },
       "links": {},
-      "address": "0x0906A15B35E5620D0418184C87aA0f14a207F216",
-      "transactionHash": "0x3738ebfde03bc8db990886bf67090e4d6b921b8dbce4102685b52b434eb280d0"
+      "address": "0xDa1C0a8d38A30F9F1A29Ea6Be696BC8594c0F7dC",
+      "transactionHash": "0x96ce328a04b0c0333b746aae43c92cb76f7bdbf68e94a9e92b8172f2609f95dc"
     }
   },
   "schemaVersion": "3.0.6",
-  "updatedAt": "2019-04-23T19:57:12.572Z",
+  "updatedAt": "2019-04-23T20:10:13.323Z",
   "devdoc": {
     "methods": {
       "isApprovedForAll(address,address)": {

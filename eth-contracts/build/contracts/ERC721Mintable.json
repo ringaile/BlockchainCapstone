@@ -30162,12 +30162,12 @@
         }
       },
       "links": {},
-      "address": "0xC678de088388d961a6CA623Ac7fC8b98d975918c",
-      "transactionHash": "0x2674de2c2850929fd9e1b3ff34204693c16b05a12ac995650d8afed48e5e1021"
+      "address": "0xF9cE4e2f25eC7D7C76E63eAbb33272b5dFc70eDc",
+      "transactionHash": "0x659e12ae36087dd01367cfa54a5d74eec038581efe546c3dd2923abc578eca97"
     }
   },
   "schemaVersion": "3.0.6",
-  "updatedAt": "2019-04-23T19:57:12.595Z",
+  "updatedAt": "2019-04-23T20:10:13.348Z",
   "devdoc": {
     "methods": {
       "isApprovedForAll(address,address)": {
