@@ -6,13 +6,13 @@ The capstone will build upon the knowledge you have gained in the course in orde
 
 Contract 'Verifier'
    --------------------
-   > transaction hash:    0xf245983ef532b23d27a1639dc95ef82ab8f53816385c57938ce4c8322818abc4
-   > Blocks: 1            Seconds: 12
-   > contract address:    0x525dbe540Da562B5e15aefA39A6Ac0d560EaD255
-   > block number:        4264391
-   > block timestamp:     1556095293
+   > transaction hash:    0xf76ba23c646addb3186bb24b338a6c2b40d3f32647773a485356e8b718640ac1
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x8c736c3f75176FBbF7932f53f27C0c976156e298
+   > block number:        4264610
+   > block timestamp:     1556098578
    > account:             0xa8aefA5B5cf6d4c8b02400f5413B704fA7cC2c29
-   > balance:             0.9201164
+   > balance:             0.8611288
    > gas used:            1774538
    > gas price:           10 gwei
    > value sent:          0 ETH
@@ -21,17 +21,23 @@ Contract 'Verifier'
 
  Contract 'SolnSquareVerifier'
    ------------------------------
-   > transaction hash:    0xa43681d4a5094fe0c5245a4a70a6688fbb84beb490a24e5606fe8724f777af03
-   > Blocks: 0            Seconds: 8
-   > contract address:    0xBF9AB604e78aF4673A654B574e4599def8fA608C
-   > block number:        4264392
-   > block timestamp:     1556095308
+   > transaction hash:    0x8e2e721651e1d09920857e29262c1d68e5d84d177b5d0d1bb2f590929c37eab2
+   > Blocks: 0            Seconds: 12
+   > contract address:    0x333E4ebed7bEc8C2C7f947F7F8336e032FA87A7d
+   > block number:        4264611
+   > block timestamp:     1556098593
    > account:             0xa8aefA5B5cf6d4c8b02400f5413B704fA7cC2c29
-   > balance:             0.88229636
-   > gas used:            3782004
+   > balance:             0.81970277
+   > gas used:            4142603
    > gas price:           10 gwei
    > value sent:          0 ETH
-   > total cost:          0.03782004 ETH
+   > total cost:          0.04142603 ETH
+
+
+#Open Sea account
+https://rinkeby.opensea.io/assets/randomnamev2
+
+Transfered items to second account https://rinkeby.opensea.io/accounts/0x1ccb3814a3d07e9bd0fb7e78e8453a340e5a693d
 
 # Project Resources
 
