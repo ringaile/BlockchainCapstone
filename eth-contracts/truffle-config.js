@@ -25,7 +25,7 @@
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 var HDWalletProvider = require('truffle-hdwallet-provider');
-var mnemonic = 'candy maple cake sugar pudding cream honey rich smooth crumble sweet treat';
+var mnemonic = 'bread mom hard denial control merit carpet easy eternal faculty square upset';
 
 module.exports = {
   /**
@@ -52,11 +52,11 @@ module.exports = {
      },
      rinkeby: {
       provider: function() { 
-        return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/e7567e887d024ae59a64c3d0040e074b') 
+        return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/d70fe3c263c84f79b2f3ee592e1e77d0') 
       },
       network_id: 4,
       gas: 4500000,
-      gasPrice: 100000
+      gasPrice: 10000000000
     }
 
     // Another network with more advanced options...
