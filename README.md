@@ -2,6 +2,21 @@
 
 The capstone will build upon the knowledge you have gained in the course in order to build a decentralized housing product. 
 
+## Install
+
+This repository contains Smart Contract code in Solidity (using Truffle) and tests (also using Truffle).
+
+To install, download or clone the repo, then:
+
+`npm install`
+`truffle compile`
+`truffle migrate`
+
+To run truffle tests:
+
+`truffle test`
+
+
 # Deployed contracts
 
 Contract 'Verifier'
