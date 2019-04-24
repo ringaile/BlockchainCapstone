@@ -38,19 +38,23 @@ contract('SolnSquareVerifier', accounts => {
         	const verifier = await Verifier.new({from: account});
             this.contract = await SolnSquareVerifier.new(verifier.address, {from: account});
         });
-
-        // Test if a new solution can be added for contract - SolnSquareVerifier
-        it('// Test if a new solution can be added for contract - SolnSquareVerifier', async function () {
-            let isAdded = await this.contract.addSolution(account2, 2, web3.utils.fromAscii("key"));
-            let event = isAdded.logs[0].event;
-            assert.equal("solutionAdded", event, "Solution was not added.");
-        });
-
-        // Test if an ERC721 token can be minted for contract - SolnSquareVerifier
-        it('Test if an ERC721 token can be minted for contract - SolnSquareVerifier', async function () {
+        // Test if an ERC721 token can be minted for contract and a new solution can be added for contract - SolnSquareVerifier
+        it('Test if an ERC721 token can be minted for contract a new solution can be added for contract - SolnSquareVerifier', async function () {
             let canBeMinted = await this.contract.mintNewNFT(account2, 2, A, A_p, B, B_p, C, C_p, H, K, correctProofInput, {from: account});
             let owner = await this.contract.ownerOf(2);
             assert.equal(account2, owner, "Token was not minted.");
+        });
+        // Test if an already existing solution can not be added for contract - SolnSquareVerifier
+        it('// Test if an already existing solution can not be added for contract - SolnSquareVerifier', async function () {
+            //calling with the same proof
+            let isAlreadyAdded = false;
+            try{
+                await this.contract.addSolution(account2, 2, A, A_p, B, B_p, C, C_p, H, K, correctProofInput);
+                await this.contract.addSolution(account2, 3, A, A_p, B, B_p, C, C_p, H, K, correctProofInput); 
+            } catch(e) {
+                isAlreadyAdded = true;
+            }
+            assert.equal(isAlreadyAdded, true, "Solution was added");
         });
     });
 

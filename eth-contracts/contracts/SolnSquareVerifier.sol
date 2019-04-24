@@ -30,20 +30,20 @@ contract SolnSquareVerifier is ERC721Mintable{
 	event solutionAdded(address solutionAddress);
 
 	// TODO Create a function to add the solutions to the array and emit the event
-	function addSolution(address _solutionAddress, uint256 _id, bytes32 key) public {
+	function addSolution(address _solutionAddress, uint256 _id, uint[2] memory A, uint[2] memory A_p, uint[2][2] memory B, uint[2] memory B_p, uint[2] memory C, uint[2] memory C_p, uint[2] memory H, uint[2] memory K, uint[2] memory input) public {
+		bytes32 key = keccak256(abi.encodePacked(A, A_p, B, B_p, C, C_p, H, K, input));
+		require(isSolutionUnique(key), "Solution already exsits.");
         Solution memory sol = Solution({id: _id, solutionAddress: _solutionAddress});
         solutionsSubmitted[key] = sol;
         solutions.push(sol);
         emit solutionAdded(_solutionAddress);
     }
 
-    function isSolutionUnique(address _to, uint256 _tokenId) public view returns (bool){
+    function isSolutionUnique(bytes32 key) public view returns (bool){
     	bool isUnique = true;
-    	for (uint a=0; a<solutions.length; a++) {
-			if (solutions[a].id == _tokenId && solutions[a].solutionAddress == _to) {
-     			isUnique = false;
-			}
-		}
+    	if (solutionsSubmitted[key].solutionAddress != address(0)){
+    		isUnique = false;
+    	}
 		return isUnique;	
     }
 
@@ -52,9 +52,7 @@ contract SolnSquareVerifier is ERC721Mintable{
 	//  - make sure you handle metadata as well as tokenSuplly
 	function mintNewNFT(address _to, uint256 _tokenId, uint[2] memory A, uint[2] memory A_p, uint[2][2] memory B, uint[2] memory B_p, uint[2] memory C, uint[2] memory C_p, uint[2] memory H, uint[2] memory K, uint[2] memory input) public{
 		require(verifier.verifyTx(A, A_p, B, B_p, C, C_p, H, K, input), "Incorrect solution");
-		require(isSolutionUnique(_to, _tokenId), "Solution already exsits.");
-		bytes32 key = keccak256(abi.encodePacked(A, A_p, B, B_p, C, C_p, H, K, input));
-		addSolution(_to, _tokenId, key);
+		addSolution(_to, _tokenId, A, A_p, B, B_p, C, C_p, H, K, input);
 		super.mint(_to, _tokenId);
 	}
 
