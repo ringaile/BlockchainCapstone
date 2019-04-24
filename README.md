@@ -49,7 +49,7 @@ Contract 'Verifier'
    > total cost:          0.04142603 ETH
 
 
-#Open Sea account
+# Open Sea account
 https://rinkeby.opensea.io/assets/randomnamev2
 
 Transfered items to second account https://rinkeby.opensea.io/accounts/0x1ccb3814a3d07e9bd0fb7e78e8453a340e5a693d
