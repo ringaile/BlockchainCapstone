@@ -523,9 +523,9 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
     // TIP #2: you can also use uint2str() to convert a uint to a string
         // see https://github.com/oraclize/ethereum-api/blob/master/oraclizeAPI_0.5.sol for strConcat()
     // require the token exists before setting
-    function _setTokenURI(uint256 tokenId, string memory uri) internal {
+    function _setTokenURI(uint256 tokenId) internal {
         require(_exists(tokenId));
-        _tokenURIs[tokenId] = uri;
+        _tokenURIs[tokenId] = strConcat(_baseTokenURI, uint2str(tokenId));
     }
 
 }
@@ -547,9 +547,9 @@ contract ERC721Mintable is ERC721Metadata{
     constructor () ERC721Metadata(_name, _symbol, _baseTokenCustomURI) public {
     }
 
-    function mint(address to, uint256 tokenId, string memory uri) public onlyOwner returns (bool ){
+    function mint(address to, uint256 tokenId) public onlyOwner returns (bool ){
         super._mint(to, tokenId);
-        super._setTokenURI(tokenId, uri);
+        super._setTokenURI(tokenId);
         return true;
     }
 }

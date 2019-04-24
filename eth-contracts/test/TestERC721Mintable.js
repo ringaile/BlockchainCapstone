@@ -10,10 +10,10 @@ contract('ERC721Mintable', accounts => {
             this.contract = await ERC721Mintable.new({from: account_one});
 
             // TODO: mint multiple tokens
-            let resultMint = await this.contract.mint(account_one, 1, "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/1");
-            let resultMint2 = await this.contract.mint(account_one, 2, "https://s3-us-west-2.amazonaws.com/udacity-blockchain");
-            let resultMint3 = await this.contract.mint(account_one, 3, "baseURI3");
-            let resultMint4 = await this.contract.mint(account_one, 4, "baseURI4");
+            let resultMint = await this.contract.mint(account_one, 1);
+            let resultMint2 = await this.contract.mint(account_one, 2);
+            let resultMint3 = await this.contract.mint(account_one, 3);
+            let resultMint4 = await this.contract.mint(account_one, 4);
         })
 
         it('should return total supply', async function () {

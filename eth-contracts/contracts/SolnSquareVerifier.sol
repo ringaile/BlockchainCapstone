@@ -55,7 +55,7 @@ contract SolnSquareVerifier is ERC721Mintable{
 		require(isSolutionUnique(_to, _tokenId), "Solution already exsits.");
 		bytes32 key = keccak256(abi.encodePacked(A, A_p, B, B_p, C, C_p, H, K, input));
 		addSolution(_to, _tokenId, key);
-		super.mint(_to, _tokenId, "url");
+		super.mint(_to, _tokenId);
 	}
 
 }
