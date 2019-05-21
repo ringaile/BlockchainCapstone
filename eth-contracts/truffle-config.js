@@ -25,7 +25,7 @@
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 var HDWalletProvider = require('truffle-hdwallet-provider');
-var mnemonic = 'bread mom hard denial control merit carpet easy eternal faculty square upset';
+var mnemonic = '';
 
 module.exports = {
   /**
